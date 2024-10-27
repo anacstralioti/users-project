@@ -1,7 +1,7 @@
 <h1>Sistema em Python com Flask e SQLite</h1>
 
 <h2>Descrição</h2>
-<p>Este projeto é um sistema de autenticação de usuários desenvolvido em Python com Flask, utilizando banco de dados SQLite para armazenar informações de usuários. Entre suas funcionalidades estão cadastro, login e atualização de usuários. As senhas são armazenadas de forma segura utilizando hashing com bcrypt e o sistema assume que o login (e-mail) fornecido no cadastro é único.</p>
+<p>Este projeto é um sistema de autenticação de usuários desenvolvido em Python com Flask, utilizando banco de dados SQLite para armazenar informações de usuários. Entre suas funcionalidades estão cadastro, login e atualização de usuários, além do login com Google e GitHub por meio de autenticação OAuth 2.0 e redifinição de senha por meio de e-mail. As senhas são armazenadas de forma segura utilizando hashing com bcrypt e o sistema assume que o login (e-mail) fornecido no cadastro é único.</p>
 
 <h2>Funcionalidades</h2>
 <ul>
