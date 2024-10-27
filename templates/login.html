@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Login</title>
+   <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+<main>
+   <div class="container">
+       <h1>Login</h1>
+
+       {% with messages = get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+                <script>
+                    {% for category, message in messages %}
+                        alert("{{ message }}");
+                    {% endfor %}
+                </script>
+            {% endif %}
+       {% endwith %}
+
+       <form id="loginForm">
+           <label for="email">Login</label><br>
+           <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required><br>
+           <label for="senha">Senha</label><br>
+           <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required><br>
+           <a href="{{ url_for('forgot_password') }}">Esqueci minha senha</a><br><br>
+           <button type="submit">Login</button>
+
+           <div class="separator">
+                <hr>
+                <span><p>OU</p></span>
+                <hr>
+           </div>
+
+           <a href="/login/google" class="google-btn">
+               <div class="google-icon-wrapper">
+                   <br><img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png" height="25" width="25"/>
+               </div>
+               <p class="btn-text"><b>Continue com Google</b></p>
+           </a>
+           <a href="/login/github" class="google-btn">
+               <div class="google-icon-wrapper">
+                   <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/800px-GitHub_Invertocat_Logo.svg.png" height="25" width="25"/>
+               </div>
+               <p class="btn-text"><b>Continue com GitHub</b></p>
+           </a>
+       </form>
+
+       <p>Não possui uma conta? <a href="cadastro">Cadastre-se</a></p>
+       <p>Deseja voltar? <a href="/">Clique para voltar à página principal</a></p>
+   </div>
+   <script>
+       document.getElementById('loginForm').addEventListener('submit', async function(e) {
+           e.preventDefault();
+           const formData = new FormData(this);
+           const response = await fetch('/login', {
+               method: 'POST',
+               headers: {
+                   'Content-Type': 'application/json',
+               },
+               body: JSON.stringify({
+                   login: formData.get('email'),
+                   senha: formData.get('senha'),
+               }),
+           });
+           const result = await response.json();
+           if (response.ok) {
+               window.location.href = result.redirect;
+           } else {
+               alert(result.error);
+           }
+       });
+   </script>
+</main>
+</body>
+</html>

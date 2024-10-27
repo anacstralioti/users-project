@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Cadastro</title>
+   <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+<main>
+   <div class="container">
+       <h1>Cadastro</h1>
+       <form id="cadastroForm">
+           <label for="nome">Nome</label><br>
+           <input type="text" id="nome" name="nome" required><br>
+           <label for="email">E-mail</label><br>
+           <input type="email" id="email" name="email" required><br>
+           <label for="senha">Senha</label><br>
+           <input type="password" id="senha" name="senha" required><br>
+           <button type="submit">Cadastrar</button>
+       </form>
+       <p>Já possui uma conta? <a href="login">Faça login</a></p>
+       <p>Deseja voltar? <a href="/">Clique para voltar à página principal</a></p>
+   </div>
+   <script>
+       document.getElementById('cadastroForm').addEventListener('submit', async function(e) {
+           e.preventDefault();
+           const formData = new FormData(this);
+           // faz uma requisição pra /cadastro usando o POST
+           const response = await fetch('/cadastro', {
+               method: 'POST',
+               headers: {
+                   'Content-Type': 'application/json',
+               },
+               // cria requisição em JSON
+               body: JSON.stringify({
+                   nome: formData.get('nome'),
+                   login: formData.get('email'),
+                   senha: formData.get('senha'),
+               }),
+           });
+           // converte pra JSON
+           const result = await response.json();
+
+           // retorna as mensagens de sucesso e erro
+           alert(result.message || result.error);
+       });
+   </script>
+</main>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Alteração de Usuário</title>
+   <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+<main>
+   <div class="container">
+       <h1>Alterar dados do usuário</h1>
+       <form id="alteracaoForm">
+           <label for="userId">ID do Usuário</label><br>
+           <input type="text" id="userId" name="userId" placeholder="Digite o ID do usuário" required><br>
+           <label for="email">Login (e-mail)</label><br>
+           <input type="email" id="email" name="email" placeholder="Digite o novo e-mail (opcional)"><br>
+           <label for="senha">Senha</label><br>
+           <input type="password" id="senha" name="senha" placeholder="Digite a nova senha (opcional)"><br>
+           <label for="nome">Nome Completo</label><br>
+           <input type="text" id="nome" name="nome" placeholder="Digite o nome completo" required><br>
+           <label for="status">Status</label>
+           <select id="status" name="status" required>
+               <option value="">Selecione um status</option>
+               <option value="1">Ativo</option>
+               <option value="0">Inativo</option>
+           </select><br><br>
+           <button type="submit">Alterar</button>
+       </form>
+       <p>Deseja voltar? <a href="/">Clique para voltar à página principal</a></p>
+   </div>
+   <script>
+       function limparCampos(){
+           usuarioId = null;
+           document.getElementById('email').value = '';
+           document.getElementById('nome').value = '';
+           document.getElementById('status').value = '';
+           document.getElementById('novo_email').value = '';
+       }
+
+       let usuarioId; // vai armazenar o id
+
+       document.getElementById('userId').addEventListener('input', async function() {
+           const id = this.value;
+           if (id) {
+               // pega os dados do usuário com o id fornecido
+               const response = await fetch(`/usuarios/${id}`);
+               if (response.ok) {
+                   const data = await response.json();
+                   usuarioId = data.id;
+                   document.getElementById('email').value = '';
+                   document.getElementById('nome').value = data.nome;
+                   document.getElementById('status').value = data.status;
+               } else {
+                   limparCampos();
+               }
+           } if (!id){
+               limparCampos();
+           }
+       });
+
+       document.getElementById('alteracaoForm').addEventListener('submit', async function(e) {
+           e.preventDefault();
+           const formData = new FormData(this);
+           // faz uma requisição pra atualizar o usuário usando PUT
+           const novoLogin = formData.get('email') || '';
+           const response = await fetch(`/usuarios/${usuarioId}`, {
+               method: 'PUT',
+               headers: {
+                   'Content-Type': 'application/json',
+               },
+               // cria requisição em JSON
+               body: JSON.stringify({
+                   login: novoLogin,
+                   senha: formData.get('senha'),
+                   nome: formData.get('nome'),
+                   status: formData.get('status'),
+               }),
+           });
+           // converte pra JSON
+           const result = await response.json();
+
+           // retorna as mensagens de sucesso e erro
+           alert(result.message || result.error);
+       });
+   </script>
+</main>
+</body>
+</html>
