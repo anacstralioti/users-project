@@ -69,3 +69,24 @@ button {
     white-space: nowrap;
     color: #0D0D0D;
 }
+
+.pagination {
+    display: flex; /* Adicionando display: flex para alinhar corretamente */
+    justify-content: center; /* Centralizando os itens */
+    font-size: 16px;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: #007bff;
+    margin: 0 10px;
+}
+
+.pagination a:hover {
+    text-decoration: underline;
+}
+
+.pagination a.active {
+    font-weight: bold;
+    color: #0056b3;
+}

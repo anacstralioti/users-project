@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="{{ get_locale() }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ _('Erro 403 - Acesso Proibido') }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+   <style>
+       .header {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           padding: 20px;
+       }
+       .language-selector img {
+           cursor: pointer;
+           width: 30px;
+           height: 20px;
+           margin-left: 10px;
+       }
+       .language-selector {
+           margin-right: 30px;
+       }
+       .error-message {
+           text-align: center;
+           padding: 50px 0;
+       }
+       .error-message h1 {
+           font-size: 120px;
+           color: #dc3545;
+       }
+       .error-message h2 {
+           font-size: 24px;
+           color: #6c757d;
+       }
+       .pagination {
+           text-align: center;
+           margin-top: 30px;
+       }
+   </style>
+</head>
+<body>
+<main>
+    <div class="container">
+        <div class="language-selector">
+            <a href="{{ url_for('forbidden', lang='en') }}">
+                <img src="{{ url_for('static', filename='images/eua.png') }}" alt="{{ _('English') }}">
+            </a>
+            <a href="{{ url_for('forbidden', lang='es') }}">
+                <img src="{{ url_for('static', filename='images/spain.png') }}" alt="{{ _('Español') }}">
+            </a>
+            <a href="{{ url_for('forbidden', lang='pt_BR') }}">
+                <img src="{{ url_for('static', filename='images/brasil.png') }}" alt="{{ _('Português') }}">
+            </a>
+        </div>
+        <div class="error-message">
+            <h1>403</h1>
+            <h2>{{ _('Acesso Proibido') }}</h2>
+            <p>{{ _('Você não tem permissão para acessar esta página.') }}</p>
+            <p>{{ _('Se você acredita que isso é um erro, entre em contato com o administrador.') }}</p><br><br>
+
+            <a href="{{ url_for('pagina_final') }}">{{ _('Voltar para a página inicial') }}</a><br><br>
+            <a href="{{ url_for('logout') }}">{{ _('Clique aqui para sair') }}</a><br><br>
+        </div>
+
+        <div class="pagination">
+        <a href="{{ url_for('navegar', pagina='final') }}">&lt;</a>
+        <a href="{{ url_for('navegar', pagina='final') }}">1</a> |
+        <a href="{{ url_for('navegar', pagina='forbidden') }}" class="active">2</a>
+        <a href="{{ url_for('navegar', pagina='forbidden') }}">&gt;</a>
+    </div>
+    </div>
+</main>
+</body>
+</html>

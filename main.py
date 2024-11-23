@@ -1,6 +1,7 @@
 import os
-from flask import Flask, request, jsonify, render_template, url_for, redirect, flash, session
+from flask import Flask, request, jsonify, render_template, url_for, redirect, flash, session, make_response
 import sqlite3, bcrypt, re
+from flask_babel import Babel, _
 from datetime import datetime
 from flask_dance.contrib.google import make_google_blueprint, google
 from flask_dance.contrib.github import make_github_blueprint, github
@@ -52,6 +53,9 @@ mail = Mail(app)
 
 s = URLSafeTimedSerializer(app.secret_key)
 
+app.config['BABEL_DEFAULT_LOCALE'] = 'pt_BR'
+app.config['BABEL_TRANSLATION_DIRECTORIES'] = 'translations'
+
 def get_db():
    db = sqlite3.connect(DATABASE)
    db.row_factory = sqlite3.Row
@@ -79,6 +83,28 @@ def home():
         return redirect(url_for('pagina_final'))
 
     return render_template('index.html')
+
+def get_locale():
+    # Verifica se o parâmetro 'lang' está na URL, caso contrário usa o cookie
+    lang = request.args.get('lang')  # Pega o parâmetro 'lang' da URL
+    if lang and lang in ['en', 'es', 'pt_BR']:
+        resp = make_response(redirect(request.url))  # Redireciona para a mesma página com o novo idioma
+        resp.set_cookie('language', lang)  # Armazena no cookie
+        return lang
+
+    # Se não passar o parâmetro na URL, usa o valor armazenado no cookie
+    lang = request.cookies.get('language')
+    if lang and lang in ['en', 'es', 'pt_BR']:
+        return lang
+
+    # Caso contrário, usa o melhor idioma do Accept-Language do navegador
+    return request.accept_languages.best_match(['en', 'es', 'pt_BR'])
+
+babel = Babel(app, locale_selector=get_locale)
+
+@app.context_processor
+def inject_locale():
+    return {'get_locale': get_locale}
 
 @app.route('/initdb')
 def initialize_database():
@@ -139,6 +165,8 @@ def login_usuario():
                     return jsonify({'error': 'Usuário bloqueado, não é possível fazer login'}), 403
 
                 if bcrypt.checkpw(senha.encode('utf-8'), usuario['senha']):
+                    session['user_id'] = usuario['id']  # Armazenar o ID do usuário na sessão
+                    session['is_admin'] = usuario['is_admin']  # Armazenar o status de administrador
                     return jsonify({'redirect': url_for('pagina_final')}), 200
 
             return jsonify({'error': 'Login ou senha inválidos'}), 401
@@ -233,7 +261,14 @@ def reset_password(token):
 
 @app.route('/alteracao')
 def alteracao():
-   return render_template('alteracao.html')
+    if 'is_admin' not in session or session['is_admin'] != 1:
+        return redirect(url_for('forbidden'))
+
+    return render_template('alteracao.html')
+
+@app.route("/forbidden")
+def forbidden():
+    return render_template("403.html"), 403
 
 @app.route('/usuarios/<int:usuario_id>', methods=['GET'])
 def get_usuario(usuario_id):
@@ -309,6 +344,22 @@ def delete_usuario(usuario_id):
 @app.route('/pagina_final')
 def pagina_final():
     return render_template('pagina_final.html')
+
+@app.route('/pagina_seguinte')
+def pagina_seguinte():
+    return render_template('pagina_seguinte.html')
+
+
+@app.route('/navegar/<pagina>')
+def navegar(pagina):
+    if pagina == "final":
+        return redirect(url_for('pagina_final'))
+    elif pagina == "seguinte":
+        return redirect(url_for('pagina_seguinte'))
+    elif pagina == "forbidden":
+        return redirect(url_for('forbidden'))
+    else:
+        return redirect(url_for('pagina_final'))
 
 @app.route('/logout')
 def logout():

@@ -1,16 +1,52 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="{{ get_locale() }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Final</title>
-    <link rel="stylesheet" href="static/style.css">
+    <title>{{ _('Página Final') }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+   <style>
+       .header {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           padding: 20px;
+       }
+       .language-selector img {
+           cursor: pointer;
+           width: 30px;
+           height: 20px;
+           margin-left: 10px;
+       }
+       .language-selector {
+           margin-right: 30px;
+       }
+   </style>
 </head>
 <body>
 <main>
     <div class="container">
-        <h1>Você fez login!</h1>
-        <a href="{{ url_for('logout') }}">Clique aqui para sair</a>
+        <h1>{{ _('Você fez login!') }}</h1>
+        <div class="language-selector">
+           <a href="{{ url_for('pagina_final', lang='en') }}">
+               <img src="{{ url_for('static', filename='images/eua.png') }}" alt="{{ _('English') }}">
+           </a>
+           <a href="{{ url_for('pagina_final', lang='es') }}">
+               <img src="{{ url_for('static', filename='images/spain.png') }}" alt="{{ _('Español') }}">
+           </a>
+           <a href="{{ url_for('pagina_final', lang='pt_BR') }}">
+               <img src="{{ url_for('static', filename='images/brasil.png') }}" alt="{{ _('Português') }}">
+           </a><br><br>
+        </div>
+        <a href="{{ url_for('pagina_seguinte') }}">{{ _('Ir para a página seguinte') }}</a><br><br>
+        <a href="{{ url_for('logout') }}">{{ _('Clique aqui para sair') }}</a><br><br>
+    </div>
+
+    <div class="pagination">
+        <a href="{{ url_for('navegar', pagina='final') }}">&lt;</a>
+        <a href="{{ url_for('navegar', pagina='final') }}" class="active">1</a> |
+        <a href="{{ url_for('navegar', pagina='seguinte') }}">2</a>
+        <a href="{{ url_for('navegar', pagina='seguinte') }}">&gt;</a>
     </div>
 </main>
 </body>

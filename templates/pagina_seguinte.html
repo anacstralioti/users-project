@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="{{ get_locale() }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ _('Página Final') }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+   <style>
+       .header {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           padding: 20px;
+       }
+       .language-selector img {
+           cursor: pointer;
+           width: 30px;
+           height: 20px;
+           margin-left: 10px;
+       }
+       .language-selector {
+           margin-right: 30px;
+       }
+   </style>
+</head>
+<body>
+<main>
+    <div class="container">
+        <h1>{{ _('Bem-vindo à Página Seguinte') }}</h1>
+        <div class="language-selector">
+           <a href="{{ url_for('pagina_seguinte', lang='en') }}">
+               <img src="{{ url_for('static', filename='images/eua.png') }}" alt="{{ _('English') }}">
+           </a>
+           <a href="{{ url_for('pagina_seguinte', lang='es') }}">
+               <img src="{{ url_for('static', filename='images/spain.png') }}" alt="{{ _('Español') }}">
+           </a>
+           <a href="{{ url_for('pagina_seguinte', lang='pt_BR') }}">
+               <img src="{{ url_for('static', filename='images/brasil.png') }}" alt="{{ _('Português') }}">
+           </a><br><br>
+       </div>
+        <a href="{{ url_for('pagina_final') }}">{{ _('Voltar para a página inicial') }}</a><br>
+        <p><a href="/alteracao">{{ _('Alteração de Usuário') }}</a></p>
+        <a href="{{ url_for('logout') }}">{{ _('Clique aqui para sair') }}</a><br><br>
+    </div>
+
+    <div class="pagination">
+        <a href="{{ url_for('navegar', pagina='final') }}">&lt;</a>
+        <a href="{{ url_for('navegar', pagina='final') }}">1</a> |
+        <a href="{{ url_for('navegar', pagina='seguinte') }}" class="active">2</a>
+        <a href="{{ url_for('navegar', pagina='seguinte') }}">&gt;</a>
+    </div>
+</main>
+</body>
+</html>

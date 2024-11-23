@@ -1,15 +1,44 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="{{ get_locale() }}">
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Login</title>
-   <link rel="stylesheet" href="static/style.css">
+   <title>{{ _('Login') }}</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+   <style>
+       .header {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           padding: 20px;
+       }
+       .language-selector img {
+           cursor: pointer;
+           width: 30px;
+           height: 20px;
+           margin-left: 10px;
+       }
+       .language-selector {
+           margin-right: 30px;
+       }
+   </style>
 </head>
 <body>
 <main>
    <div class="container">
-       <h1>Login</h1>
+       <h1>{{ _('Login') }}</h1>
+
+       <div class="language-selector">
+           <a href="{{ url_for('login_usuario', lang='en') }}">
+               <img src="{{ url_for('static', filename='images/eua.png') }}" alt="{{ _('English') }}">
+           </a>
+           <a href="{{ url_for('login_usuario', lang='es') }}">
+               <img src="{{ url_for('static', filename='images/spain.png') }}" alt="{{ _('Español') }}">
+           </a>
+           <a href="{{ url_for('login_usuario', lang='pt_BR') }}">
+               <img src="{{ url_for('static', filename='images/brasil.png') }}" alt="{{ _('Português') }}">
+           </a><br><br>
+       </div>
 
        {% with messages = get_flashed_messages(with_categories=True) %}
             {% if messages %}
@@ -22,16 +51,16 @@
        {% endwith %}
 
        <form id="loginForm">
-           <label for="email">Login</label><br>
-           <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required><br>
-           <label for="senha">Senha</label><br>
-           <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required><br>
-           <a href="{{ url_for('forgot_password') }}">Esqueci minha senha</a><br><br>
-           <button type="submit">Login</button>
+           <label for="email">{{ _('Login') }}</label><br>
+           <input type="email" id="email" name="email" placeholder="{{ _('Digite seu e-mail') }}" required><br>
+           <label for="senha">{{ _('Senha') }}</label><br>
+           <input type="password" id="senha" name="senha" placeholder="{{ _('Digite sua senha') }}" required><br>
+           <a href="{{ url_for('forgot_password') }}">{{ _('Esqueci minha senha') }}</a><br><br>
+           <button type="submit">{{ _('Login') }}</button>
 
            <div class="separator">
                 <hr>
-                <span><p>OU</p></span>
+                <span><p>{{ _('OU') }}</p></span>
                 <hr>
            </div>
 
@@ -39,18 +68,18 @@
                <div class="google-icon-wrapper">
                    <br><img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png" height="25" width="25"/>
                </div>
-               <p class="btn-text"><b>Continue com Google</b></p>
+               <p class="btn-text"><b>{{ _('Continue com Google') }}</b></p>
            </a>
            <a href="/login/github" class="google-btn">
                <div class="google-icon-wrapper">
                    <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/800px-GitHub_Invertocat_Logo.svg.png" height="25" width="25"/>
                </div>
-               <p class="btn-text"><b>Continue com GitHub</b></p>
+               <p class="btn-text"><b>{{ _('Continue com GitHub') }}</b></p>
            </a>
        </form>
 
-       <p>Não possui uma conta? <a href="cadastro">Cadastre-se</a></p>
-       <p>Deseja voltar? <a href="/">Clique para voltar à página principal</a></p>
+       <p>{{ _('Não possui uma conta?') }} <a href="cadastro">{{ _('Cadastre-se') }}</a></p>
+       <p>{{ _('Deseja voltar?') }} <a href="/">{{ _('Clique para voltar à página principal') }}</a></p>
    </div>
    <script>
        document.getElementById('loginForm').addEventListener('submit', async function(e) {

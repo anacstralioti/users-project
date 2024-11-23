@@ -1,26 +1,54 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="{{ get_locale() }}">
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Cadastro</title>
-   <link rel="stylesheet" href="static/style.css">
+   <title>{{ _('Cadastro') }}</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+   <style>
+       .header {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           padding: 20px;
+       }
+       .language-selector img {
+           cursor: pointer;
+           width: 30px;
+           height: 20px;
+           margin-left: 10px;
+       }
+       .language-selector {
+           margin-right: 30px;
+       }
+   </style>
 </head>
 <body>
 <main>
    <div class="container">
-       <h1>Cadastro</h1>
+       <h1>{{ _('Cadastro') }}</h1>
+       <div class="language-selector">
+           <a href="{{ url_for('cadastro', lang='en') }}">
+               <img src="{{ url_for('static', filename='images/eua.png') }}" alt="{{ _('English') }}">
+           </a>
+           <a href="{{ url_for('cadastro', lang='es') }}">
+               <img src="{{ url_for('static', filename='images/spain.png') }}" alt="{{ _('Español') }}">
+           </a>
+           <a href="{{ url_for('cadastro', lang='pt_BR') }}">
+               <img src="{{ url_for('static', filename='images/brasil.png') }}" alt="{{ _('Português') }}">
+           </a><br><br>
+       </div>
        <form id="cadastroForm">
-           <label for="nome">Nome</label><br>
+           <label for="nome">{{ _('Nome') }}</label><br>
            <input type="text" id="nome" name="nome" required><br>
-           <label for="email">E-mail</label><br>
+           <label for="email">{{ _('E-mail') }}</label><br>
            <input type="email" id="email" name="email" required><br>
-           <label for="senha">Senha</label><br>
+           <label for="senha">{{ _('Senha') }}</label><br>
            <input type="password" id="senha" name="senha" required><br>
-           <button type="submit">Cadastrar</button>
+           <button type="submit">{{ _('Cadastrar') }}</button>
        </form>
-       <p>Já possui uma conta? <a href="login">Faça login</a></p>
-       <p>Deseja voltar? <a href="/">Clique para voltar à página principal</a></p>
+       <p>{{ _('Já possui uma conta?') }} <a href="login">{{ _('Faça login') }}</a></p>
+       <p>{{ _('Deseja voltar?') }} <a href="/">{{ _('Clique para voltar à página principal') }}</a></p>
    </div>
    <script>
        document.getElementById('cadastroForm').addEventListener('submit', async function(e) {

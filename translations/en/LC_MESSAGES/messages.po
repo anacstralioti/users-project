@@ -1,0 +1,275 @@
+# English translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-11-08 20:04-0300\n"
+"PO-Revision-Date: 2024-11-08 20:05-0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+msgid "Alteração de Usuário"
+msgstr "User Modification"
+
+msgid "ID do Usuário"
+msgstr "User ID"
+
+msgid "Digite o ID do usuário"
+msgstr "Enter the user ID"
+
+msgid "Login (e-mail)"
+msgstr "Login (e-mail)"
+
+msgid "Digite o novo e-mail (opcional)"
+msgstr "Enter the new email (optional)"
+
+msgid "Senha"
+msgstr "Password"
+
+msgid "Digite a nova senha (opcional)"
+msgstr "Enter the new password (optional)"
+
+msgid "Nome Completo"
+msgstr "Full Name"
+
+msgid "Digite o nome completo"
+msgstr "Enter the full name"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Selecione um status"
+msgstr "Select a status"
+
+msgid "Ativo"
+msgstr "Active"
+
+msgid "Inativo"
+msgstr "Inactive"
+
+msgid "Alterar"
+msgstr "Update"
+
+msgid "Deseja voltar?"
+msgstr "Want to go back?"
+
+msgid "Clique para voltar à página principal"
+msgstr "Click to return to the main page"
+
+msgid "English"
+msgstr "English"
+
+msgid "Español"
+msgstr "Spanish"
+
+msgid "Português"
+msgstr "Portuguese"
+
+msgid "Cadastro"
+msgstr "Registration"
+
+msgid "Nome"
+msgstr "Name"
+
+msgid "E-mail"
+msgstr "Email"
+
+msgid "Senha"
+msgstr "Password"
+
+msgid "Cadastrar"
+msgstr "Register"
+
+msgid "Já possui uma conta? "
+msgstr "Already have an account? "
+
+msgid "Faça login"
+msgstr "Login"
+
+msgid "Deseja voltar?"
+msgstr "Do you want to go back?"
+
+msgid "Clique para voltar à página principal"
+msgstr "Click to return to the homepage"
+
+msgid "Esqueci minha Senha"
+msgstr "Forgot My Password"
+
+msgid "Recuperação de senha"
+msgstr "Password Recovery"
+
+msgid "Digite seu email"
+msgstr "Enter your email"
+
+msgid "Enviar"
+msgstr "Send"
+
+msgid "Home"
+msgstr "Home"
+
+msgid "Bem-vindo!"
+msgstr "Welcome!"
+
+msgid "Para iniciar, selecione uma das opções:"
+msgstr "To get started, select one of the options:"
+
+msgid "Fazer login"
+msgstr "Login"
+
+msgid "Não tem cadastro? "
+msgstr "Don't have an account? "
+
+msgid "Clique aqui para se cadastrar"
+msgstr "Click here to sign up"
+
+msgid "Alteração de Usuário"
+msgstr "User Change"
+
+msgid "Login, senha e nome são obrigatórios"
+msgstr "Login, password, and name are required."
+
+msgid "Login deve ser um e-mail válido"
+msgstr "Login must be a valid email."
+
+msgid "Login já existe"
+msgstr "Login already exists."
+
+msgid "Usuário cadastrado com sucesso!"
+msgstr "User successfully registered!"
+
+msgid "Login e senha são obrigatórios"
+msgstr "Login and password are required."
+
+msgid "Usuário bloqueado, não é possível fazer login"
+msgstr "User is blocked, login is not possible."
+
+msgid "Login ou senha inválidos"
+msgstr "Invalid login or password."
+
+msgid "Este e-mail não está cadastrado."
+msgstr "This email is not registered."
+
+msgid "Redefinição de senha"
+msgstr "Password reset"
+
+msgid "Clique no link para redefinir a sua senha:"
+msgstr "Click the link to reset your password:"
+
+msgid "Um link de recuperação de senha foi enviado para o seu email"
+msgstr "A password recovery link has been sent to your email."
+
+msgid "Erro ao acessar o banco de dados."
+msgstr "Error accessing the database."
+
+msgid "O link de redefinição de senha expirou"
+msgstr "The password reset link has expired."
+
+msgid "Token inválido"
+msgstr "Invalid token."
+
+msgid "Sua senha foi redefinida com sucesso!"
+msgstr "Your password has been successfully reset!"
+
+msgid "Usuário não encontrado"
+msgstr "User not found."
+
+msgid "Usuário atualizado com sucesso!"
+msgstr "User successfully updated!"
+
+msgid "Usuário bloqueado com sucesso"
+msgstr "User successfully blocked."
+
+msgid "Desconectado do Google com sucesso."
+msgstr "Successfully logged out of Google."
+
+msgid "Página Final"
+msgstr "Final Page"
+
+msgid "Você fez login!"
+msgstr "You are logged in!"
+
+msgid "Ir para a página seguinte"
+msgstr "Go to the next page"
+
+msgid "Clique aqui para sair"
+msgstr "Click here to log out"
+
+msgid "Página Final"
+msgstr "Final Page"
+
+msgid "Bem-vindo à Página Seguinte"
+msgstr "Welcome to the Next Page"
+
+msgid "Voltar para a página inicial"
+msgstr "Back to the Home Page"
+
+msgid "Clique aqui para sair"
+msgstr "Click here to log out"
+
+msgid "Redefinir Senha"
+msgstr "Reset Password"
+
+msgid "Recuperação de senha"
+msgstr "Password Recovery"
+
+msgid "Digite sua nova senha"
+msgstr "Enter your new password"
+
+msgid "Redefinir"
+msgstr "Reset"
+
+msgid "Login"
+msgstr "Login"
+
+msgid "Digite seu e-mail"
+msgstr "Enter your email"
+
+msgid "Digite sua senha"
+msgstr "Enter your password"
+
+msgid "Esqueci minha senha"
+msgstr "Forgot my password"
+
+msgid "OU"
+msgstr "OR"
+
+msgid "Continue com Google"
+msgstr "Continue with Google"
+
+msgid "Continue com GitHub"
+msgstr "Continue with GitHub"
+
+msgid "Não possui uma conta?"
+msgstr "Don't have an account?"
+
+msgid "Cadastre-se"
+msgstr "Sign up"
+
+msgid "Deseja voltar?"
+msgstr "Want to go back?"
+
+msgid "Clique para voltar à página principal"
+msgstr "Click to go back to the main page"
+
+msgid "Erro 403 - Acesso Proibido"
+msgstr "Error 403 - Forbidden"
+
+msgid "Acesso Proibido"
+msgstr "Forbidden"
+
+msgid "Você não tem permissão para acessar esta página."
+msgstr "You do not have permission to access this page."
+
+msgid "Se você acredita que isso é um erro, entre em contato com o administrador."
+msgstr "If you believe this is an error, please contact the administrator."
+

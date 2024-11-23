@@ -5,5 +5,6 @@ create table if not exists usuarios (
     nome varchar not null,
     created timestamp default current_timestamp,
     modified timestamp default current_timestamp,
-    status smallint default 1
+    status smallint default 1,
+    is_admin INTEGER NOT NULL DEFAULT 0
 );

@@ -1,0 +1,293 @@
+# Spanish translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-11-08 20:04-0300\n"
+"PO-Revision-Date: 2024-11-08 20:05-0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+msgid "Alteração de Usuário"
+msgstr "Modificación de Usuario"
+
+msgid "ID do Usuário"
+msgstr "ID del Usuario"
+
+msgid "Digite o ID do usuário"
+msgstr "Introduzca el ID del usuario"
+
+msgid "Login (e-mail)"
+msgstr "Inicio de sesión (correo electrónico)"
+
+msgid "Digite o novo e-mail (opcional)"
+msgstr "Introduzca el nuevo correo electrónico (opcional)"
+
+msgid "Senha"
+msgstr "Contraseña"
+
+msgid "Digite a nova senha (opcional)"
+msgstr "Introduzca la nueva contraseña (opcional)"
+
+msgid "Nome Completo"
+msgstr "Nombre Completo"
+
+msgid "Digite o nome completo"
+msgstr "Introduzca el nombre completo"
+
+msgid "Status"
+msgstr "Estado"
+
+msgid "Selecione um status"
+msgstr "Seleccione un estado"
+
+msgid "Ativo"
+msgstr "Activo"
+
+msgid "Inativo"
+msgstr "Inactivo"
+
+msgid "Alterar"
+msgstr "Modificar"
+
+msgid "Deseja voltar?"
+msgstr "¿Quiere volver?"
+
+msgid "Clique para voltar à página principal"
+msgstr "Haga clic para volver a la página principal"
+
+msgid "English"
+msgstr "Inglés"
+
+msgid "Español"
+msgstr "Español"
+
+msgid "Português"
+msgstr "Portugués"
+
+msgid "Cadastro"
+msgstr "Registro"
+
+msgid "Nome"
+msgstr "Nombre"
+
+msgid "E-mail"
+msgstr "Correo electrónico"
+
+msgid "Senha"
+msgstr "Contraseña"
+
+msgid "Cadastrar"
+msgstr "Registrar"
+
+msgid "Já possui uma conta? "
+msgstr "¿Ya tienes una cuenta? "
+
+msgid "Faça login"
+msgstr "Inicia sesión"
+
+msgid "Esqueci minha Senha"
+msgstr "Olvidé mi Contraseña"
+
+msgid "Recuperação de senha"
+msgstr "Recuperación de contraseña"
+
+msgid "Digite seu email"
+msgstr "Ingresa tu correo electrónico"
+
+msgid "Enviar"
+msgstr "Enviar"
+
+msgid "Home"
+msgstr "Inicio"
+
+msgid "Bem-vindo!"
+msgstr "¡Bienvenido!"
+
+msgid "Para iniciar, selecione uma das opções:"
+msgstr "Para comenzar, selecciona una de las opciones:"
+
+msgid "Fazer login"
+msgstr "Iniciar sesión"
+
+msgid "Não tem cadastro? "
+msgstr "¿No tienes cuenta? "
+
+msgid "Clique aqui para se cadastrar"
+msgstr "Haz clic aquí para registrarte"
+
+
+msgid "Alteração de Usuário"
+msgstr "Cambio de Usuario"
+
+msgid "Login"
+msgstr "Iniciar sesión"
+
+msgid "Login"
+msgstr "Correo electrónico"
+
+msgid "Digite seu e-mail"
+msgstr "Introduzca su correo electrónico"
+
+msgid "Senha"
+msgstr "Contraseña"
+
+msgid "Esqueci minha senha"
+msgstr "Olvidé mi contraseña"
+
+msgid "Continue com Google"
+msgstr "Continuar con Google"
+
+msgid "Continue com GitHub"
+msgstr "Continuar con GitHub"
+
+msgid "Não possui uma conta? Cadastre-se"
+msgstr "¿Quieres volver? Haz clic para regresar a la página principal"
+
+msgid "Login, senha e nome são obrigatórios"
+msgstr "El login, la contraseña y el nombre son obligatorios."
+
+msgid "Login deve ser um e-mail válido"
+msgstr "El login debe ser un correo electrónico válido."
+
+msgid "Login já existe"
+msgstr "El login ya existe."
+
+msgid "Usuário cadastrado com sucesso!"
+msgstr "¡Usuario registrado con éxito!"
+
+msgid "Login e senha são obrigatórios"
+msgstr "El login y la contraseña son obligatorios."
+
+msgid "Usuário bloqueado, não é possível fazer login"
+msgstr "El usuario está bloqueado, no es posible iniciar sesión."
+
+msgid "Login ou senha inválidos"
+msgstr "Login o contraseña inválidos."
+
+msgid "Este e-mail não está cadastrado."
+msgstr "Este correo electrónico no está registrado."
+
+msgid "Redefinição de senha"
+msgstr "Restablecimiento de contraseña"
+
+msgid "Clique no link para redefinir a sua senha:"
+msgstr "Haz clic en el enlace para restablecer tu contraseña:"
+
+msgid "Um link de recuperação de senha foi enviado para o seu email"
+msgstr "Se ha enviado un enlace de recuperación de contraseña a tu correo electrónico."
+
+msgid "Erro ao acessar o banco de dados."
+msgstr "Error al acceder a la base de datos."
+
+msgid "O link de redefinição de senha expirou"
+msgstr "El enlace de restablecimiento de contraseña ha expirado."
+
+msgid "Token inválido"
+msgstr "Token inválido."
+
+msgid "Sua senha foi redefinida com sucesso!"
+msgstr "¡Tu contraseña ha sido restablecida con éxito!"
+
+msgid "Usuário não encontrado"
+msgstr "Usuario no encontrado."
+
+msgid "Usuário atualizado com sucesso!"
+msgstr "¡Usuario actualizado con éxito!"
+
+msgid "Usuário bloqueado com sucesso"
+msgstr "Usuario bloqueado con éxito."
+
+msgid "Desconectado do Google com sucesso."
+msgstr "Desconectado de Google con éxito."
+
+msgid "Página Final"
+msgstr "Página Final"
+
+msgid "Você fez login!"
+msgstr "¡Has iniciado sesión!"
+
+msgid "Ir para a página seguinte"
+msgstr "Ir a la siguiente página"
+
+msgid "Clique aqui para sair"
+msgstr "Haga clic aquí para salir"
+
+msgid "Página Final"
+msgstr "Página Final"
+
+msgid "Bem-vindo à Página Seguinte"
+msgstr "Bienvenido a la siguiente página"
+
+msgid "Voltar para a página inicial"
+msgstr "Volver a la página principal"
+
+msgid "Clique aqui para sair"
+msgstr "Haga clic aquí para salir"
+
+msgid "Redefinir Senha"
+msgstr "Restablecer contraseña"
+
+msgid "Recuperação de senha"
+msgstr "Recuperación de contraseña"
+
+msgid "Digite sua nova senha"
+msgstr "Introduce tu nueva contraseña"
+
+msgid "Redefinir"
+msgstr "Restablecer"
+
+msgid "Login"
+msgstr "Iniciar sesión"
+
+msgid "Digite seu e-mail"
+msgstr "Introduce tu correo electrónico"
+
+msgid "Digite sua senha"
+msgstr "Introduce tu contraseña"
+
+msgid "Esqueci minha senha"
+msgstr "Olvidé mi contraseña"
+
+msgid "OU"
+msgstr "O"
+
+msgid "Continue com Google"
+msgstr "Continúa con Google"
+
+msgid "Continue com GitHub"
+msgstr "Continúa con GitHub"
+
+msgid "Não possui uma conta?"
+msgstr "¿No tienes una cuenta?"
+
+msgid "Cadastre-se"
+msgstr "Regístrate"
+
+msgid "Deseja voltar?"
+msgstr "¿Quieres volver?"
+
+msgid "Clique para voltar à página principal"
+msgstr "Haz clic para volver a la página principal"
+
+msgid "Erro 403 - Acesso Proibido"
+msgstr "Error 403 - Acceso Prohibido"
+
+msgid "Acesso Proibido"
+msgstr "Acceso Prohibido"
+
+msgid "Você não tem permissão para acessar esta página."
+msgstr "No tienes permiso para acceder a esta página."
+
+msgid "Se você acredita que isso é um erro, entre em contato com o administrador."
+msgstr "Si crees que esto es un error, por favor contacta al administrador."

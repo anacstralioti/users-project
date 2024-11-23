@@ -1,20 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="{{ get_locale() }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="static/style.css">
+    <title>{{ _('Home') }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+       .header {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           padding: 20px;
+       }
+       .language-selector img {
+           cursor: pointer;
+           width: 30px;
+           height: 20px;
+           margin-left: 10px;
+       }
+       .language-selector {
+           margin-right: 30px;
+       }
+   </style>
 </head>
 <body>
 <main>
     <div class="container">
-        <h1>Bem-vindo!</h1>
-        <p>Para iniciar, selecione uma das opções:</p>
+        <h1>{{ _('Bem-vindo!') }}</h1>
+        <div class="language-selector">
+           <a href="{{ url_for('home', lang='en') }}">
+               <img src="{{ url_for('static', filename='images/eua.png') }}" alt="{{ _('English') }}">
+           </a>
+           <a href="{{ url_for('home', lang='es') }}">
+               <img src="{{ url_for('static', filename='images/spain.png') }}" alt="{{ _('Español') }}">
+           </a>
+           <a href="{{ url_for('home', lang='pt_BR') }}">
+               <img src="{{ url_for('static', filename='images/brasil.png') }}" alt="{{ _('Português') }}">
+           </a><br><br>
+       </div>
+        <p>{{ _('Para iniciar, selecione uma das opções:') }}</p>
         <div class="links">
-            <p><a href="/login">Fazer login</a></p>
-            <p>Não tem cadastro? <a href="/cadastro">Clique aqui para se cadastrar</a></p>
-            <p><a href="/alteracao">Alteração de Usuário</a></p>
+            <p><a href="/login">{{ _('Fazer login') }}</a></p>
+            <p>{{ _('Não tem cadastro? ') }}<a href="/cadastro">{{ _('Clique aqui para se cadastrar') }}</a></p>
         </div>
     </div>
 </main>
