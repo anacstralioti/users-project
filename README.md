@@ -16,3 +16,6 @@ It supports multiple languages (Portuguese, English, and Spanish), with a dynami
 - **Multi-language Support:** Portuguese, English, and Spanish with dynamic UI translation.
 - **Role-Based Access Control:** admin-only access for user management (set `is_admin` to `1` in `schema.sql` for admin).
 
+---
+
+Made with 🐍 + ☕ by a passionate developer.
