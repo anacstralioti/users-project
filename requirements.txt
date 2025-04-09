@@ -1,0 +1,6 @@
+Flask==2.2.5
+Flask-Dance==7.0.0
+Flask-Mail==0.9.1
+Flask-Babel==3.1.0
+bcrypt==4.1.2
+itsdangerous==2.1.2
